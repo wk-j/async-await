@@ -9,14 +9,15 @@ let urls = [
 
 async function download(url) {
     console.log(`download - ${url}`);
-    var rs = await axios.get(url);
+    var json = await axios.get(url);
+
     console.log(`complete - ${url}`);
-    return rs;
+    return json;
 }
 
 async function start() {
     let tasks = urls.map(download);
-    Promise.all(tasks);
+    await Promise.all(tasks);
 }
 
 start();
