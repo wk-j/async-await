@@ -8,7 +8,12 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "lib": [
+    "DOM"
+  ],
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  },
   "devDependencies": {
     "@types/axios": "^0.14.0"
   }

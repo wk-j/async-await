@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "outDir": "TypeScript.Out",
         "target": "es6",
         "strictNullChecks": true,
         "moduleResolution": "node"
