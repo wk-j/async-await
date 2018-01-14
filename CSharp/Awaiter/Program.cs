@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace Awaiter {
+namespace Await {
     static class Extensions {
         public static TaskAwaiter<(T1, T2)> GetAwaiter<T1, T2>(this (Task<T1>, Task<T2>) tasks)
                 => tasks.Transpose().GetAwaiter();
@@ -15,11 +15,12 @@ namespace Awaiter {
     }
 
     class Program {
+        static async Task<string> Ps(int i) {
+            await Task.Delay(i);
+            return i.ToString();
+        }
         static async Task Main(string[] args) {
-            async Task<string> f1(int x) => await Task.Run(() => $"Hello {x}");
-
-            var (v1, v2) = await (f1(1), f1(2));
-
+            var (v1, v2) = await (Ps(1), Ps(2));
             Console.WriteLine(v1);
             Console.WriteLine(v2);
         }

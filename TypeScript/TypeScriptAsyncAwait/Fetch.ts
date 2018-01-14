@@ -1,6 +1,6 @@
 import fetch from "node-fetch"
 
-async function start(): Promise<any[]> {
+async function start() {
     const [wk, dotnet] = await Promise.all([
         fetch("https://api.github.com/users/github"),
         fetch("https://api.github.com/users/dotnet")
